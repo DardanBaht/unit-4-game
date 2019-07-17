@@ -17,6 +17,12 @@ h1{
     color: aliceblue
 }
 
+#number{
+    color: brown;
+    font-size: 35px;
+    background-color: yellow;
+}
+
 .Wins{
     background-color: darkseagreen;
     color: aliceblue;

@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/javascript/game.js"></script>
+  
     <title>Document</title>
 </head>
 <body>
     
-
-
     <h1>Crystal Collector!!!</h1>
 
     <div class = "row">
@@ -24,11 +26,11 @@
     </div>
     </div>
     
-    <div class = "row">
-        <div class = "RandomNum">
+    
 
-            <br>
-        </div>
+    <div class = "row">
+       
+        <div id = "number"> ... </div>
 
         <div class = "Wins">
             <p>Wins:</p>
@@ -68,5 +70,27 @@
              <br>
         </div>
     </div>
+
+
+
+
+
+
+
+    <!-- I needed to add the script through here becuase for some reason the random number was not showing up on my webpage when I was doing it through my javascript file. Not sure what I am doing worng... -->
+<script>
+var randomNumber;
+var winner;
+var loser;
+
+
+randomNumber = Math.floor(Math.random() * 101) + 19;
+$("#number").html("Your number is: "+ randomNumber);
+
+
+
+
+</script>
+
 </body>
 </html>
