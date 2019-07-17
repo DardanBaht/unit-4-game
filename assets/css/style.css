@@ -1,0 +1,53 @@
+body{
+    background-color: beige;
+}
+
+h1{
+    text-align: center;
+    color: red;
+    background-color: aqua;
+}
+
+.row {
+    text-align: center;
+}
+
+.Instructions {
+    background-color: navy;
+    color: aliceblue
+}
+
+.Wins{
+    background-color: darkseagreen;
+    color: aliceblue;
+}
+
+.Pic1{
+    height: 20%;
+    width: 10%;
+}
+
+.Pic2{
+    height: 20%;
+    width: 10%;
+}
+
+.Pic3{
+    height: 20%;
+    width: 10%;
+}
+
+.Pic4{
+    height: 20%;
+    width:6.2%;
+}
+
+.Sco {
+    background-color: cornflowerblue;
+    color: aliceblue;
+}
+
+.Score {
+    background-color: teal;
+    color: aliceblue;
+}
