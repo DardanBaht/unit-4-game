@@ -3,13 +3,13 @@ var wins = 0;
 var losses = 0;
 var value = 0;
 
-// Radom number generated for the game. 
+//Radom number generated for the game. 
 
 randomNumber = Math.floor(Math.random() * 101) + 19;
 $("#number").html("Your number is: "+ randomNumber);
 
 
-// I tried to run a for loop in order to generate a random number for each crystal but every time I clicked on a cystal the numbers would be the same for all. This is the only way it ended up working for me. I have to figure out how the loop can generate a different value for each crystal/image. 
+//I tried to run a for loop in order to generate a random number for each crystal but every time I clicked on a cystal the numbers would be the same for all. This is the only way it ended up working for me. I have to figure out how the loop can generate a different value for each crystal/image. 
 
 
 for (var i = 0; i < 4; i++) {
@@ -29,7 +29,7 @@ var randomFour = Math.floor(Math.random() * 12) + 1;
 }
 
 
-//Added functions for winning and losing and what happens after each. 
+//Added functions for winning/losing and what happens after each. 
 
 function youWon(){
     wins++;
@@ -45,7 +45,7 @@ function youWon(){
   }
 
 
-//   I could not figure out how to reset the game to start all over. I tried putting the for loop in the function and doing it that way but it did not seem to work. 
+//I could not figure out how to reset the game to start all over. I tried putting the for loop in the function and doing it that way but it did not seem to work. 
 
 function playAgain(){
       randomNumber = Math.floor(Math.random() * 101) + 19;
@@ -55,7 +55,7 @@ function playAgain(){
 }
 
 
-// Functions for clicking on images, adding each click to the total score, and what happens when you equal the random number and when you go over the random number (Winner and Loser). 
+//Functions for clicking on images, adding each click to the total score, and what happens when you equal the random number and when you go over the random number (Winner and Loser). 
 
 $("#Pic1").on("click", function(){
     value = value + randomOne;
