@@ -4,8 +4,8 @@ body{
 
 h1{
     text-align: center;
-    color: red;
-    background-color: aqua;
+    color: antiquewhite;
+    background-color: blue;
 }
 
 .row {
@@ -23,37 +23,38 @@ h1{
     background-color: yellow;
 }
 
-.Wins{
+.Tracking{
     background-color: darkseagreen;
     color: aliceblue;
 }
 
-.Pic1{
+#Pic1{
     height: 20%;
     width: 10%;
 }
 
-.Pic2{
+#Pic2{
     height: 20%;
     width: 10%;
 }
 
-.Pic3{
+#Pic3{
     height: 20%;
     width: 10%;
 }
 
-.Pic4{
+#Pic4{
     height: 20%;
     width:6.2%;
 }
 
-.Sco {
+.value {
     background-color: cornflowerblue;
     color: aliceblue;
 }
 
-.Score {
+#Score {
     background-color: teal;
     color: aliceblue;
+    font-size: 25px;
 }

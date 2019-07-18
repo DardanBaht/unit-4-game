@@ -32,9 +32,11 @@
        
         <div id = "number"> ... </div>
 
-        <div class = "Wins">
-            <p>Wins:</p>
-            <p>Loses:</p>
+        <div class = "Tracking">
+            <p>Wins: </p>
+            <p id = "Winner"> 0</p>
+            <p>Losses: </p>
+            <p id = "Loser" > 0</p>
 
 
         </div>
@@ -45,47 +47,151 @@
 
     <div class = "Pics">
 
-        <img class = "Pic1" src="https://is2-ssl.mzstatic.com/image/thumb/Purple71/v4/52/4e/13/524e13e3-d076-5280-92b8-6af0c7d9a793/pr_source.png/246x0w.jpg" alt="Blue">
+        <img id = "Pic1" src="https://is2-ssl.mzstatic.com/image/thumb/Purple71/v4/52/4e/13/524e13e3-d076-5280-92b8-6af0c7d9a793/pr_source.png/246x0w.jpg" alt="Blue">
 
-        <img class = "Pic2" src="https://i.ebayimg.com/images/g/TXoAAOSwAuNW4MOg/s-l300.jpg" alt="Red">
+        <img id = "Pic2" src="https://i.ebayimg.com/images/g/TXoAAOSwAuNW4MOg/s-l300.jpg" alt="Red" >
 
-        <img class = "Pic3" src="https://images-na.ssl-images-amazon.com/images/I/41AuTi-I4yL.jpg" alt="Green">
+        <img id = "Pic3" src="https://images-na.ssl-images-amazon.com/images/I/41AuTi-I4yL.jpg" alt="Green">
 
-        <img class = "Pic4" src="https://i.pinimg.com/736x/89/95/4d/89954d2b9358a348582aff777eee9349--rocks-and-minerals-crystals-minerals.jpg" alt="Yellow">
+        <img id = "Pic4" src="https://i.pinimg.com/736x/89/95/4d/89954d2b9358a348582aff777eee9349--rocks-and-minerals-crystals-minerals.jpg" alt="Yellow">
 
 
     </div>
-    </div>
-
-    <div class = "row">
-        <div class = "Sco">
-             <p>Your Score is:</p>
-             <br>
-        </div>     
     </div>
 
     <div class ="row">
-        <div class = "Score">
-             <p>Score:</p>
+        <div id = "Score">
+
+            Your Score is: 0
              <br>
+       
         </div>
     </div>
-
-
-
-
-
 
 
     <!-- I needed to add the script through here becuase for some reason the random number was not showing up on my webpage when I was doing it through my javascript file. Not sure what I am doing worng... -->
 <script>
 var randomNumber;
-var winner;
-var loser;
+var wins = 0;
+var losses = 0;
+var value = 0;
 
+// Radom number generated for the game. 
 
 randomNumber = Math.floor(Math.random() * 101) + 19;
 $("#number").html("Your number is: "+ randomNumber);
+
+
+// I tried to run a for loop in order to generate a random number for each crystal but every time I clicked on a cystal the numbers would be the same for all. This is the only way it ended up working for me. I have to figure out how the loop can generate a different value for each crystal/image. 
+
+
+for (var i = 0; i < 4; i++) {
+var randomOne = Math.floor(Math.random() * 12) + 1;
+}
+
+for (var i = 0; i < 4; i++) {
+var randomTwo = Math.floor(Math.random() * 12) + 1;
+}
+
+for (var i = 0; i < 4; i++) {
+var randomThree = Math.floor(Math.random() * 12) + 1;
+}
+
+for (var i = 0; i < 4; i++) {
+var randomFour = Math.floor(Math.random() * 12) + 1;
+}
+
+
+//Added functions for winning and losing and what happens after each. 
+
+function youWon(){
+    wins++;
+    $("#Winner").html(wins);
+    playAgain();
+
+  }
+
+  function youLost(){
+      losses++;
+      $("#Loser").html(losses);
+      playAgain();
+  }
+
+
+//   I could not figure out how to reset the game to start all over. I tried putting the for loop in the function and doing it that way but it did not seem to work. 
+
+function playAgain(){
+      randomNumber = Math.floor(Math.random() * 101) + 19;
+      $("#number").html("Your number is: "+ randomNumber);
+      var value = 0;
+      $("#Score").text("Your Score is: " + value); 
+}
+
+
+// Functions for clicking on images, adding each click to the total score, and what happens when you equal the random number and when you go over the random number (Winner and Loser). 
+
+$("#Pic1").on("click", function(){
+    value = value + randomOne;
+    
+    $("#Score").text("Your Score is: " + value); 
+        if (value === randomNumber){
+          youWon();
+          
+        }
+
+        else if ( value > randomNumber){
+          youLost();
+         
+        }   
+  })  
+
+  $("#Pic2").on("click", function(){
+    value = value + randomTwo;
+
+    $("#Score").text("Your Score is: " + value); 
+        
+        if (value === randomNumber){
+          youWon();
+          
+        }
+
+        else if (value > randomNumber){
+          youLost();
+         
+        }   
+  })  
+
+  $("#Pic3").on("click", function(){
+    value = value + randomThree;
+   
+    $("#Score").text("Your Score is: " + value); 
+
+        if (value === randomNumber){
+          youWon();
+          
+        }
+
+        else if (value > randomNumber){
+          youLost();
+    
+        }   
+  })  
+
+  $("#Pic4").on("click", function(){
+    value = value + randomFour;
+
+    $("#Score").text("Your Score is: " + value); 
+          
+        if (value === randomNumber){
+          youWon();
+          
+        }
+
+        else if (value > randomNumber){
+          youLost();
+         
+        }   
+  })  
 
 
 
